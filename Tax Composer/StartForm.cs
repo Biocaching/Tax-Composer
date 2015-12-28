@@ -157,6 +157,7 @@ namespace Tax_Composer
         {
             int level = getDeepestChildNodeLevel(taxTreeView.Nodes[0]);
 
+            sourceLbl.Text = "Source: " + startForm.taxSource;
             depthLbl.Text = "Depth: " + level.ToString();
             itemsLbl.Text = "Items: " + taxTreeView.GetNodeCount(true).ToString();
         }

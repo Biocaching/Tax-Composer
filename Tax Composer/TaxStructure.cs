@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Tax_Composer
+﻿namespace Tax_Composer
 {
     public class Specie
     {

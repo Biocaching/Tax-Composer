@@ -44,10 +44,14 @@ namespace Tax_Composer
             fileDialog.Filter = "XML Files (*.xml)|*.xml";
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                taxTreeView.Nodes.Clear();
-                taxTreeView.Nodes.Add(taxXml.parse(fileDialog.FileName));
-                taxTreeView.ExpandAll();
-                updateLabels();
+                TreeNode root = taxXml.parse(fileDialog.FileName);
+                if (root != null)
+                {
+                    taxTreeView.Nodes.Clear();
+                    taxTreeView.Nodes.Add(root);
+                    taxTreeView.ExpandAll();
+                    updateLabels();
+                }
             }
         }
 

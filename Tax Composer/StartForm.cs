@@ -20,6 +20,7 @@ namespace Tax_Composer
         public startForm()
         {
             InitializeComponent();
+            saveFileMenuItem.Enabled = false;
         }
 
         private void newFileMainMenu_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace Tax_Composer
                 root.Tag = new Specie(true, null, taxName);
                 taxTreeView.Nodes.Add(root);
                 updateLabels();
+                saveFileMenuItem.Enabled = true;
             }
         }
 
@@ -51,6 +53,7 @@ namespace Tax_Composer
                     taxTreeView.Nodes.Add(root);
                     taxTreeView.ExpandAll();
                     updateLabels();
+                    saveFileMenuItem.Enabled = true;
                 }
             }
         }

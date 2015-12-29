@@ -176,7 +176,7 @@ namespace Tax_Composer
         private void startForm_KeyDown(object sender, KeyEventArgs e)
         {
             //new file, Ctrl+n
-            if(e.KeyCode == Keys.N && Control.ModifierKeys == Keys.Control) {
+            if (e.KeyCode == Keys.N && Control.ModifierKeys == Keys.Control) {
                 newFileMainMenu.PerformClick();
             }
             //open file, Ctrl+o

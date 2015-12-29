@@ -26,7 +26,7 @@ namespace Tax_Composer
         // continue
         private void createBtn_Click(object sender, EventArgs e)
         {
-            if(nameBox.Text != "")
+            if (nameBox.Text != "")
             {
                if(Directory.Exists(pathBox.Text))
                {

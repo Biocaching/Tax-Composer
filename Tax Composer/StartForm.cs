@@ -189,6 +189,26 @@ namespace Tax_Composer
             {
                 saveFileMenuItem.PerformClick();
             }
+            //collapse taxTree
+            if (e.KeyCode == Keys.C && Control.ModifierKeys == Keys.Shift)
+            {
+                taxTreeView.CollapseAll();
+            }
+            //expand taxTree
+            if (e.KeyCode == Keys.E && Control.ModifierKeys == Keys.Shift)
+            {
+                taxTreeView.ExpandAll();
+            }
+        }
+
+        private void collapseMenuItem_Click(object sender, EventArgs e)
+        {
+            taxTreeView.CollapseAll();
+        }
+
+        private void expandMenuItem_Click(object sender, EventArgs e)
+        {
+            taxTreeView.ExpandAll();
         }
     }
 }

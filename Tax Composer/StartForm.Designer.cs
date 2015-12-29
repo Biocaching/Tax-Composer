@@ -34,6 +34,9 @@
             this.newFileMainMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileMainMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collapseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expandMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemsLbl = new System.Windows.Forms.Label();
             this.depthLbl = new System.Windows.Forms.Label();
             this.sourceLbl = new System.Windows.Forms.Label();
@@ -51,7 +54,8 @@
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMainMenu});
+            this.fileMainMenu,
+            this.viewToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(459, 24);
@@ -71,23 +75,46 @@
             // newFileMainMenu
             // 
             this.newFileMainMenu.Name = "newFileMainMenu";
-            this.newFileMainMenu.Size = new System.Drawing.Size(152, 22);
+            this.newFileMainMenu.Size = new System.Drawing.Size(103, 22);
             this.newFileMainMenu.Text = "New";
             this.newFileMainMenu.Click += new System.EventHandler(this.newFileMainMenu_Click);
             // 
             // openFileMainMenu
             // 
             this.openFileMainMenu.Name = "openFileMainMenu";
-            this.openFileMainMenu.Size = new System.Drawing.Size(152, 22);
+            this.openFileMainMenu.Size = new System.Drawing.Size(103, 22);
             this.openFileMainMenu.Text = "Open";
             this.openFileMainMenu.Click += new System.EventHandler(this.openFileMainMenu_Click);
             // 
             // saveFileMenuItem
             // 
             this.saveFileMenuItem.Name = "saveFileMenuItem";
-            this.saveFileMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveFileMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveFileMenuItem.Text = "Save";
             this.saveFileMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.collapseMenuItem,
+            this.expandMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // collapseMenuItem
+            // 
+            this.collapseMenuItem.Name = "collapseMenuItem";
+            this.collapseMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.collapseMenuItem.Text = "Collapse tree";
+            this.collapseMenuItem.Click += new System.EventHandler(this.collapseMenuItem_Click);
+            // 
+            // expandMenuItem
+            // 
+            this.expandMenuItem.Name = "expandMenuItem";
+            this.expandMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.expandMenuItem.Text = "Expand tree";
+            this.expandMenuItem.Click += new System.EventHandler(this.expandMenuItem_Click);
             // 
             // itemsLbl
             // 
@@ -211,6 +238,9 @@
         private System.Windows.Forms.ToolStripMenuItem fromSourceContextMenu;
         private System.Windows.Forms.ToolStripMenuItem customContextMenu;
         private System.Windows.Forms.ToolStripMenuItem saveFileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem collapseMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expandMenuItem;
     }
 }
 

@@ -33,6 +33,7 @@
             this.fileMainMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newFileMainMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileMainMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemsLbl = new System.Windows.Forms.Label();
             this.depthLbl = new System.Windows.Forms.Label();
             this.sourceLbl = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.customContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.editContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.removeContextMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.treeContextMenu.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.fileMainMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newFileMainMenu,
             this.openFileMainMenu,
-            this.saveToolStripMenuItem});
+            this.saveFileMenuItem});
             this.fileMainMenu.Name = "fileMainMenu";
             this.fileMainMenu.Size = new System.Drawing.Size(37, 20);
             this.fileMainMenu.Text = "File";
@@ -71,16 +71,23 @@
             // newFileMainMenu
             // 
             this.newFileMainMenu.Name = "newFileMainMenu";
-            this.newFileMainMenu.Size = new System.Drawing.Size(103, 22);
+            this.newFileMainMenu.Size = new System.Drawing.Size(152, 22);
             this.newFileMainMenu.Text = "New";
             this.newFileMainMenu.Click += new System.EventHandler(this.newFileMainMenu_Click);
             // 
             // openFileMainMenu
             // 
             this.openFileMainMenu.Name = "openFileMainMenu";
-            this.openFileMainMenu.Size = new System.Drawing.Size(103, 22);
+            this.openFileMainMenu.Size = new System.Drawing.Size(152, 22);
             this.openFileMainMenu.Text = "Open";
             this.openFileMainMenu.Click += new System.EventHandler(this.openFileMainMenu_Click);
+            // 
+            // saveFileMenuItem
+            // 
+            this.saveFileMenuItem.Name = "saveFileMenuItem";
+            this.saveFileMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveFileMenuItem.Text = "Save";
+            this.saveFileMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // itemsLbl
             // 
@@ -163,13 +170,6 @@
             this.removeContextMenu.Text = "Remove";
             this.removeContextMenu.Click += new System.EventHandler(this.removeContextMenu_Click);
             // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
             // startForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,9 +181,11 @@
             this.Controls.Add(this.taxTreeView);
             this.Controls.Add(this.mainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "startForm";
             this.Text = "Tax Composer";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.startForm_KeyDown);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.treeContextMenu.ResumeLayout(false);
@@ -208,7 +210,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeContextMenu;
         private System.Windows.Forms.ToolStripMenuItem fromSourceContextMenu;
         private System.Windows.Forms.ToolStripMenuItem customContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveFileMenuItem;
     }
 }
 

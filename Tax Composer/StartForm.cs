@@ -168,5 +168,24 @@ namespace Tax_Composer
             IEnumerable<int> subLevel = node.Nodes.Cast<TreeNode>().Select(getDeepestChildNodeLevel);
             return subLevel.Count() == 0 ? 1 : subLevel.Max() + 1;
         }
+
+        // keyboard shortcuts
+        private void startForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            //new file, Ctrl+n
+            if(e.KeyCode == Keys.N && Control.ModifierKeys == Keys.Control) {
+                newFileMainMenu.PerformClick();
+            }
+            //open file, Ctrl+o
+            if (e.KeyCode == Keys.O && Control.ModifierKeys == Keys.Control)
+            {
+                openFileMainMenu.PerformClick();
+            }
+            //save file, Ctrl+s
+            if (e.KeyCode == Keys.S && Control.ModifierKeys == Keys.Control)
+            {
+                saveFileMenuItem.PerformClick();
+            }
+        }
     }
 }

@@ -85,6 +85,11 @@ namespace Tax_Composer
                 char[] invalidFilenameChars = Path.GetInvalidFileNameChars();
                 string validName = String.Join("_", startForm.taxName.Split(invalidFilenameChars, StringSplitOptions.RemoveEmptyEntries)).TrimEnd('.');
 
+                if (validName == "")
+                {
+                    validName = "recentTax";
+                }
+
                 string fullFileName = dirPath + "\\" + validName + ".xml";
                 composeAndSave(fullFileName, tree);
             }

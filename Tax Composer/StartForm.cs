@@ -33,6 +33,7 @@ namespace Tax_Composer
 
                 TreeNode root = new TreeNode(taxName);
                 root.Tag = new Specie(true, null, taxName);
+                taxTreeView.Nodes.Clear();
                 taxTreeView.Nodes.Add(root);
                 updateLabels();
                 saveFileMenuItem.Enabled = true;

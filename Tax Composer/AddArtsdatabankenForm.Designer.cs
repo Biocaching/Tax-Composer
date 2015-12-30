@@ -50,6 +50,8 @@
             // 
             // searchBox
             // 
+            this.searchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.searchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.searchBox.Location = new System.Drawing.Point(65, 6);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(229, 20);

@@ -78,7 +78,8 @@
             this.selectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectBox.FormattingEnabled = true;
             this.selectBox.Items.AddRange(new object[] {
-            "Artsdatabanken"});
+            "Artsdatabanken",
+            "Encyclopedia of Life"});
             this.selectBox.Location = new System.Drawing.Point(59, 35);
             this.selectBox.Name = "selectBox";
             this.selectBox.Size = new System.Drawing.Size(121, 21);
@@ -102,7 +103,7 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Source:";
             // 
-            // newTaxForm
+            // NewTaxForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,7 +115,7 @@
             this.Controls.Add(this.folderBrowseBtn);
             this.Controls.Add(this.pathBox);
             this.Controls.Add(this.createBtn);
-            this.Name = "newTaxForm";
+            this.Name = "NewTaxForm";
             this.Text = "New Taxonomy";
             this.ResumeLayout(false);
             this.PerformLayout();

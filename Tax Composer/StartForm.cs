@@ -126,6 +126,21 @@ namespace Tax_Composer
                         updateLabels();
                     }
                     break;
+                case "Encyclopedia of Life":
+                    addEolForm addEolForm = new addEolForm();
+
+                    if (addEolForm.ShowDialog() == DialogResult.OK)
+                    {
+                        Specie specie = addEolForm.specie;
+                        TreeNode node = new TreeNode();
+                        node.Text = specie.name;
+                        node.Tag = specie;
+
+                        activeNode.Node.Nodes.Add(node);
+                        activeNode.Node.Expand();
+                        updateLabels();
+                    }
+                        break;
                 default:
                     MessageBox.Show("Unknown source defined", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;

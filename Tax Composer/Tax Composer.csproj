@@ -89,6 +89,12 @@
     <Compile Include="EditCustomForm.Designer.cs">
       <DependentUpon>EditCustomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEolForm.Designer.cs">
+      <DependentUpon>AddEolForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewTaxForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditCustomForm.resx">
       <DependentUpon>EditCustomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEolForm.resx">
+      <DependentUpon>AddEolForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewTaxForm.resx">
       <DependentUpon>NewTaxForm.cs</DependentUpon>

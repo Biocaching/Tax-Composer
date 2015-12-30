@@ -19,8 +19,6 @@ namespace Tax_Composer
         {
             InitializeComponent();
             resultContainer.Visible = false;
-            searchBox.AutoCompleteMode = AutoCompleteMode.Suggest;
-            searchBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
@@ -56,7 +54,7 @@ namespace Tax_Composer
                     this.nName = result.DocumentElement.GetElementsByTagName("Popularnavn")[0].ChildNodes[0].InnerText;
                 } else
                 {
-                    this.Name = null;
+                    this.nName = null;
                 }
                 
             } else

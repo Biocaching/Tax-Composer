@@ -58,7 +58,7 @@
             this.viewToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(459, 24);
+            this.mainMenu.Size = new System.Drawing.Size(502, 24);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "Main menu";
             // 
@@ -75,21 +75,21 @@
             // newFileMainMenu
             // 
             this.newFileMainMenu.Name = "newFileMainMenu";
-            this.newFileMainMenu.Size = new System.Drawing.Size(103, 22);
+            this.newFileMainMenu.Size = new System.Drawing.Size(152, 22);
             this.newFileMainMenu.Text = "New";
             this.newFileMainMenu.Click += new System.EventHandler(this.newFileMainMenu_Click);
             // 
             // openFileMainMenu
             // 
             this.openFileMainMenu.Name = "openFileMainMenu";
-            this.openFileMainMenu.Size = new System.Drawing.Size(103, 22);
+            this.openFileMainMenu.Size = new System.Drawing.Size(152, 22);
             this.openFileMainMenu.Text = "Open";
             this.openFileMainMenu.Click += new System.EventHandler(this.openFileMainMenu_Click);
             // 
             // saveFileMenuItem
             // 
             this.saveFileMenuItem.Name = "saveFileMenuItem";
-            this.saveFileMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveFileMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveFileMenuItem.Text = "Save";
             this.saveFileMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -105,14 +105,14 @@
             // collapseMenuItem
             // 
             this.collapseMenuItem.Name = "collapseMenuItem";
-            this.collapseMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.collapseMenuItem.Size = new System.Drawing.Size(142, 22);
             this.collapseMenuItem.Text = "Collapse tree";
             this.collapseMenuItem.Click += new System.EventHandler(this.collapseMenuItem_Click);
             // 
             // expandMenuItem
             // 
             this.expandMenuItem.Name = "expandMenuItem";
-            this.expandMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.expandMenuItem.Size = new System.Drawing.Size(142, 22);
             this.expandMenuItem.Text = "Expand tree";
             this.expandMenuItem.Click += new System.EventHandler(this.expandMenuItem_Click);
             // 
@@ -201,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 444);
+            this.ClientSize = new System.Drawing.Size(502, 444);
             this.Controls.Add(this.itemsLbl);
             this.Controls.Add(this.depthLbl);
             this.Controls.Add(this.sourceLbl);

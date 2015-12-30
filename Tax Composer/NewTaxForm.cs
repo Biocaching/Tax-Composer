@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Security.AccessControl;
 
 namespace Tax_Composer
 {
@@ -28,7 +29,7 @@ namespace Tax_Composer
         {
             if (nameBox.Text != "")
             {
-               if(Directory.Exists(pathBox.Text))
+               if (Directory.Exists(pathBox.Text) && hasWriteAccessToFolder(pathBox.Text))
                {
                     startForm.taxName = nameBox.Text;
                     startForm.taxSource = selectBox.Text;
@@ -38,11 +39,26 @@ namespace Tax_Composer
                     this.Hide();
                 } else
                {
-                    MessageBox.Show("The path is not vaild.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The path is not vaild or you are missing write access.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             } else
             {
                 MessageBox.Show("Missing taxonomy name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private bool hasWriteAccessToFolder(string folderPath)
+        {
+            try
+            {
+                // Attempt to get a list of security permissions from the folder. 
+                // This will raise an exception if the path is read only or do not have access to view the permissions. 
+                DirectorySecurity dir = Directory.GetAccessControl(folderPath);
+                return true;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return false;
             }
         }
     }

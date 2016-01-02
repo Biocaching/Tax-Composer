@@ -57,6 +57,7 @@
             this.ClientSize = new System.Drawing.Size(323, 71);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.nameBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "addCustomForm";
             this.Text = "Custom Specie";
             this.ResumeLayout(false);

@@ -56,6 +56,7 @@
             this.ClientSize = new System.Drawing.Size(325, 77);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.newNameBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "editCustomForm";
             this.Text = "Edit Custom";
             this.ResumeLayout(false);

@@ -129,6 +129,7 @@
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "addArtsdatabankenForm";
             this.Text = "Artsdatabanken";
             this.resultContainer.ResumeLayout(false);

@@ -117,6 +117,7 @@
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.eolSearchBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "addEolForm";
             this.Text = "Encyclopedia of Life";
             this.resultContainer.ResumeLayout(false);

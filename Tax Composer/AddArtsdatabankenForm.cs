@@ -23,50 +23,61 @@ namespace Tax_Composer
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            AutoCompleteStringCollection list = new AutoCompleteStringCollection();
-            string url = suggestUrl + searchBox.Text;
+            try {
+                AutoCompleteStringCollection list = new AutoCompleteStringCollection();
+                string url = suggestUrl + searchBox.Text;
 
-            XmlDocument result = new XmlDocument();
-            result.Load(url);
+                XmlDocument result = new XmlDocument();
+                result.Load(url);
 
-            foreach (XmlNode xmlNode in result.DocumentElement)
+                foreach (XmlNode xmlNode in result.DocumentElement)
+                {
+                    list.Add(xmlNode.InnerText);
+                }
+
+                searchBox.AutoCompleteCustomSource = list;
+            } catch (Exception)
             {
-                list.Add(xmlNode.InnerText);
+                MessageBox.Show("Artsdatabanken seams to be inaccessible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            searchBox.AutoCompleteCustomSource = list;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string url = searchUrl + searchBox.Text;
-
-            XmlDocument result = new XmlDocument();
-            result.Load(url);
-
-            if (result.DocumentElement.ChildNodes[0] != null)
+            try
             {
-                this.id = result.DocumentElement.ChildNodes[0].Attributes["LatinskNavnID"].Value;
-                this.sName = result.DocumentElement.GetElementsByTagName("VitenskapligNavn")[0].InnerText;
+                string url = searchUrl + searchBox.Text;
 
-                if (result.DocumentElement.GetElementsByTagName("Popularnavn")[0] != null)
+                XmlDocument result = new XmlDocument();
+                result.Load(url);
+
+                if (result.DocumentElement.ChildNodes[0] != null)
                 {
-                    this.nName = result.DocumentElement.GetElementsByTagName("Popularnavn")[0].ChildNodes[0].InnerText;
+                    this.id = result.DocumentElement.ChildNodes[0].Attributes["LatinskNavnID"].Value;
+                    this.sName = result.DocumentElement.GetElementsByTagName("VitenskapligNavn")[0].InnerText;
+
+                    if (result.DocumentElement.GetElementsByTagName("Popularnavn")[0] != null)
+                    {
+                        this.nName = result.DocumentElement.GetElementsByTagName("Popularnavn")[0].ChildNodes[0].InnerText;
+                    } else
+                    {
+                        this.nName = null;
+                    }
+
                 } else
                 {
-                    this.nName = null;
+                    MessageBox.Show("No results found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                
-            } else
-            {
-                MessageBox.Show("No results found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            nNameLbl.Text = "Norwegian: " + this.nName;
-            sNameLbl.Text = "Scientific: " + this.sName;
-            idLbl.Text = "ID: " + this.id;
-            resultContainer.Visible = true;
+                nNameLbl.Text = "Norwegian: " + this.nName;
+                sNameLbl.Text = "Scientific: " + this.sName;
+                idLbl.Text = "ID: " + this.id;
+                resultContainer.Visible = true;
+            } catch (Exception)
+            {
+                MessageBox.Show("Artsdatabanken seams to be inaccessible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)

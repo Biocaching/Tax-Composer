@@ -21,6 +21,7 @@ namespace Tax_Composer
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 this.pathBox.Text = folderBrowserDialog.SelectedPath;
+                this.createBtn.Focus();
             }
         }
 

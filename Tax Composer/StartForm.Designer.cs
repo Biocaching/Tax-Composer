@@ -47,6 +47,9 @@
             this.customContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.editContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.removeContextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.sNameLbl = new System.Windows.Forms.Label();
+            this.sTypeLbl = new System.Windows.Forms.Label();
+            this.sIdLbl = new System.Windows.Forms.Label();
             this.mainMenu.SuspendLayout();
             this.treeContextMenu.SuspendLayout();
             this.SuspendLayout();
@@ -75,21 +78,21 @@
             // newFileMainMenu
             // 
             this.newFileMainMenu.Name = "newFileMainMenu";
-            this.newFileMainMenu.Size = new System.Drawing.Size(152, 22);
+            this.newFileMainMenu.Size = new System.Drawing.Size(103, 22);
             this.newFileMainMenu.Text = "New";
             this.newFileMainMenu.Click += new System.EventHandler(this.newFileMainMenu_Click);
             // 
             // openFileMainMenu
             // 
             this.openFileMainMenu.Name = "openFileMainMenu";
-            this.openFileMainMenu.Size = new System.Drawing.Size(152, 22);
+            this.openFileMainMenu.Size = new System.Drawing.Size(103, 22);
             this.openFileMainMenu.Text = "Open";
             this.openFileMainMenu.Click += new System.EventHandler(this.openFileMainMenu_Click);
             // 
             // saveFileMenuItem
             // 
             this.saveFileMenuItem.Name = "saveFileMenuItem";
-            this.saveFileMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveFileMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveFileMenuItem.Text = "Save";
             this.saveFileMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -197,11 +200,41 @@
             this.removeContextMenu.Text = "Remove";
             this.removeContextMenu.Click += new System.EventHandler(this.removeContextMenu_Click);
             // 
+            // sNameLbl
+            // 
+            this.sNameLbl.AutoSize = true;
+            this.sNameLbl.Location = new System.Drawing.Point(325, 316);
+            this.sNameLbl.Name = "sNameLbl";
+            this.sNameLbl.Size = new System.Drawing.Size(41, 13);
+            this.sNameLbl.TabIndex = 10;
+            this.sNameLbl.Text = "Name: ";
+            // 
+            // sTypeLbl
+            // 
+            this.sTypeLbl.AutoSize = true;
+            this.sTypeLbl.Location = new System.Drawing.Point(325, 339);
+            this.sTypeLbl.Name = "sTypeLbl";
+            this.sTypeLbl.Size = new System.Drawing.Size(37, 13);
+            this.sTypeLbl.TabIndex = 11;
+            this.sTypeLbl.Text = "Type: ";
+            // 
+            // sIdLbl
+            // 
+            this.sIdLbl.AutoSize = true;
+            this.sIdLbl.Location = new System.Drawing.Point(325, 361);
+            this.sIdLbl.Name = "sIdLbl";
+            this.sIdLbl.Size = new System.Drawing.Size(24, 13);
+            this.sIdLbl.TabIndex = 12;
+            this.sIdLbl.Text = "ID: ";
+            // 
             // startForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 444);
+            this.Controls.Add(this.sIdLbl);
+            this.Controls.Add(this.sTypeLbl);
+            this.Controls.Add(this.sNameLbl);
             this.Controls.Add(this.itemsLbl);
             this.Controls.Add(this.depthLbl);
             this.Controls.Add(this.sourceLbl);
@@ -241,6 +274,9 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collapseMenuItem;
         private System.Windows.Forms.ToolStripMenuItem expandMenuItem;
+        private System.Windows.Forms.Label sNameLbl;
+        private System.Windows.Forms.Label sTypeLbl;
+        private System.Windows.Forms.Label sIdLbl;
     }
 }
 

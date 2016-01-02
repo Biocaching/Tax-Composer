@@ -62,6 +62,23 @@ namespace Tax_Composer
         // open context menu for nodes
         private void taxTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            // populate specie labels
+            activeNode = e;
+            activeSpecie = Specie.toSpecie(e.Node.Tag);
+
+            this.sNameLbl.Text = "Name: " + activeSpecie.name;
+
+            if (activeSpecie.custom)
+            {
+                this.sIdLbl.Text = "ID: none";
+                this.sTypeLbl.Text = "Type: custom";    
+            } else
+            {
+                this.sIdLbl.Text = "ID:" + activeSpecie.id.ToString();
+                this.sTypeLbl.Text = "Type: source";
+            }
+
+            // context menu
             if (e.Button == MouseButtons.Right)
             {
                 // context menu items can have been diabled before, re-enable the by default
@@ -69,8 +86,6 @@ namespace Tax_Composer
                 treeContextMenu.Items[2].Enabled = true;
 
                 treeContextMenu.Show(taxTreeView, e.Location);
-                activeNode = e;
-                activeSpecie = Specie.toSpecie(e.Node.Tag);
 
                 // if clicked node is root, disable "edit"/"remove" 
                 if (activeNode.Node.Level == 0)

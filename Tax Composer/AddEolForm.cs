@@ -21,24 +21,30 @@ namespace Tax_Composer
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string url = this.url + eolSearchBox.Text;
-
-            XmlDocument result = new XmlDocument();
-            result.Load(url);
-
-            if (result.GetElementsByTagName("entry")[0] != null)
+            try
             {
-                this.eolName = result.DocumentElement.GetElementsByTagName("entry")[0].ChildNodes[0].InnerText;
-                this.id = result.DocumentElement.GetElementsByTagName("entry")[0].ChildNodes[2].InnerText;
-            } else
+                string url = this.url + eolSearchBox.Text;
+
+                XmlDocument result = new XmlDocument();
+                result.Load(url);
+
+                if (result.GetElementsByTagName("entry")[0] != null)
+                {
+                    this.eolName = result.DocumentElement.GetElementsByTagName("entry")[0].ChildNodes[0].InnerText;
+                    this.id = result.DocumentElement.GetElementsByTagName("entry")[0].ChildNodes[2].InnerText;
+                } else
+                {
+                    MessageBox.Show("No results found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                eolNameLbl.Text = "EOL: " + this.eolName;
+                idLbl.Text = "ID: " + this.id;
+                resultContainer.Visible = true;
+            } catch (Exception)
             {
-                MessageBox.Show("No results found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("EOL seams to be inaccessible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            eolNameLbl.Text = "EOL: " + this.eolName;
-            idLbl.Text = "ID: " + this.id;
-            resultContainer.Visible = true;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)

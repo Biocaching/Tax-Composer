@@ -19,7 +19,7 @@ namespace Tax_Composer
 
                 // add root specie(taxname)
                 TreeNode node = new TreeNode(result.DocumentElement.GetElementsByTagName("specie")[0].Attributes["name"].Value);
-                node.Tag = new Specie(false, null, result.DocumentElement.GetElementsByTagName("specie")[0].Attributes["name"].Value);
+                node.Tag = new Specie(true, null, result.DocumentElement.GetElementsByTagName("specie")[0].Attributes["name"].Value);
 
                 node = parseTreeNode(result.DocumentElement.GetElementsByTagName("specie")[0], node);
 
